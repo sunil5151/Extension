@@ -48,6 +48,27 @@ const App: React.FC = () => {
             timestamp: Date.now()
           }]);
           break;
+
+        case 'loadChatHistory':
+          // Handle loading chat history
+          console.log('Received loadChatHistory command', message);
+          if (message.messages && Array.isArray(message.messages)) {
+            // Convert the format if needed
+            const convertedMessages = message.messages.map((msg: any) => {
+              console.log('Processing message:', msg);
+              return {
+                id: msg.id || Date.now().toString(),
+                text: msg.text || '',
+                sender: msg.sender === 'bot' ? 'assistant' : msg.sender,
+                timestamp: typeof msg.timestamp === 'string' ? new Date(msg.timestamp).getTime() : 
+                        msg.timestamp instanceof Date ? msg.timestamp.getTime() : 
+                        Date.now()
+              };
+            });
+            console.log('Converted messages:', convertedMessages);
+            setMessages(convertedMessages);
+          }
+          break;
       }
     };
     
