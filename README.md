@@ -1,5 +1,7 @@
 # Hiring Guide for Reviewing the Extension Project
 Video Demonstration - https://drive.google.com/file/d/1Fq3dxGFef-9_JJTbO6sV2paWFoECroKn/view?usp=sharing
+
+
 Welcome! This guide is tailored for hiring managers and technical reviewers evaluating this repository. The project is an advanced browser extension that enables seamless integration and interaction with various Google models, providing a rich, context-aware user experience. Below you’ll find a structured overview to help you understand the project’s features, code quality, and the professional standards adhered to throughout development.
 
 ---
